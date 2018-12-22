@@ -28,7 +28,7 @@ install:
 before_script:
 - npm install -g yarn
 - yarn install
-- yarn install -g ionic cordova
+- yarn global add ionic cordova
 
 script:
 - ionic cordova build browser --prod
