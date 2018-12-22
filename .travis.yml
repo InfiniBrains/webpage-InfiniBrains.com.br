@@ -15,7 +15,16 @@ addons:
 cache:
   yarn: true
 
+before_install:
+- echo "Before install"
+
+install:
+- echo "Install"
+
 before_script:
 - npm install -g yarn
-- npm install
+- yarn install
+- yarn install -g ionic
 
+script:
+- ionic
