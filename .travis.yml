@@ -23,8 +23,8 @@ script:
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-  skip-cleanup: true
-  keep-history: true
+  skip-cleanup: false
+  keep-history: false
   repo: InfiniBrains/InfiniBrains.github.io
   target-branch: master
   on:
