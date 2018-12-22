@@ -1,15 +1,19 @@
+dist: xenial
 language: node_js
 node_js:
 - "node"
+
+compiler:
+- clang
 
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - clang-5.0
-    - gcc-6
-    - g++-6
+    - clang
+    - gcc
+    - g++
     - cmake
 
 cache:
@@ -24,7 +28,16 @@ install:
 before_script:
 - npm install -g yarn
 - yarn install
-- yarn install -g ionic
+- yarn install -g ionic cordova
 
 script:
-- ionic
+- ionic cordova build browser --prod
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master
+  local_dir: www
