@@ -23,10 +23,9 @@ script:
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-  skip-cleanup: false
-  keep-history: false
+#  skip-cleanup: false
+#  keep-history: false
   repo: InfiniBrains/InfiniBrains.github.io
-  target-branch: master
   on:
     branch: master
   local_dir: www
