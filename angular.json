@@ -62,7 +62,7 @@
               ]
             },
             "ci": {
-              "progress": false
+              "progress": true
             }
           }
         },
@@ -110,7 +110,7 @@
           },
           "configurations": {
             "ci": {
-              "progress": false,
+              "progress": true,
               "watch": false
             }
           }
